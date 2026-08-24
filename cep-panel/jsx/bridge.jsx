@@ -1,4 +1,4 @@
-var CodexBridge = CodexBridge || {};
+var AgentPremiereBridge = AgentPremiereBridge || {};
 
 (function () {
   function result(ok, payload) {
@@ -196,7 +196,7 @@ var CodexBridge = CodexBridge || {};
 
   function addSequenceMarker(sequence, markerInput) {
     var marker = sequence.markers.createMarker(Number(markerInput.timeSeconds || 0));
-    marker.name = markerInput.name || "Codex Note";
+    marker.name = markerInput.name || "Agent Note";
     marker.comments = markerInput.comment || "";
     if (markerInput.durationSeconds) {
       marker.end = Number(markerInput.timeSeconds || 0) + Number(markerInput.durationSeconds);
@@ -213,7 +213,7 @@ var CodexBridge = CodexBridge || {};
 
     var warnings = [];
     var removedOverlayAudioCount = 0;
-    var sourceBin = command.binName || "Codex Edit Assets";
+    var sourceBin = command.binName || "Agent Edit Assets";
     var sequenceBin = ensureBin(sourceBin);
     var firstClip = findOrImportByPath(command.baseClips[0].file, sourceBin);
     setProjectItemTrim(firstClip, command.baseClips[0], warnings);
@@ -478,7 +478,7 @@ var CodexBridge = CodexBridge || {};
     for (var i = 0; i < command.markers.length; i += 1) {
       var input = command.markers[i];
       var marker = markers.createMarker(Number(input.timeSeconds || 0));
-      marker.name = input.name || "Codex Marker";
+      marker.name = input.name || "Agent Marker";
       marker.comments = input.comment || "";
       if (input.durationSeconds) {
         marker.end = Number(input.timeSeconds || 0) + Number(input.durationSeconds);
@@ -525,7 +525,7 @@ var CodexBridge = CodexBridge || {};
     throw new Error("Unsupported action: " + command.action);
   }
 
-  CodexBridge.runJob = function (command) {
+  AgentPremiereBridge.runJob = function (command) {
     try {
       return result(true, { output: runCommand(command) });
     } catch (error) {
@@ -533,3 +533,4 @@ var CodexBridge = CodexBridge || {};
     }
   };
 })();
+

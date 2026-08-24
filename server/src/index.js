@@ -69,7 +69,7 @@ function send(res, status, body) {
     "Content-Type": "application/json",
     "Content-Length": Buffer.byteLength(payload),
     "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type, X-Bridge-Token",
+    "Access-Control-Allow-Headers": "Content-Type, X-Agent-Bridge-Token, X-Bridge-Token",
     "Access-Control-Allow-Methods": "GET,POST,OPTIONS"
   });
   res.end(payload);
@@ -84,7 +84,7 @@ function isAuthorized(req) {
   if (config.requireToken === false) {
     return true;
   }
-  return req.headers["x-bridge-token"] === config.token;
+  return req.headers["x-agent-bridge-token"] === config.token || req.headers["x-bridge-token"] === config.token;
 }
 
 function readBody(req) {
@@ -212,12 +212,12 @@ async function route(req, res) {
   const url = new URL(req.url || "/", `http://localhost:${config.port}`);
 
   if (req.method === "GET" && url.pathname === "/health") {
-    send(res, 200, { ok: true, service: "codex-premiere-bridge", config: publicConfig() });
+    send(res, 200, { ok: true, service: "agent-premiere-bridge", config: publicConfig() });
     return;
   }
 
   if (!isAuthorized(req)) {
-    send(res, 401, { error: "Missing or invalid X-Bridge-Token." });
+    send(res, 401, { error: "Missing or invalid X-Agent-Bridge-Token." });
     return;
   }
 
@@ -287,8 +287,9 @@ const server = createServer((req, res) => {
 });
 
 server.listen(config.port, "127.0.0.1", () => {
-  console.log(`Codex Premiere Bridge listening on http://127.0.0.1:${config.port}`);
+  console.log(`Agent Premiere Bridge listening on http://127.0.0.1:${config.port}`);
   console.log(`Token: ${config.requireToken === false ? "(disabled)" : config.token}`);
   console.log(`Auto-run on panel open: ${config.autoRunOnPanelOpen === true ? "enabled" : "disabled"}`);
   console.log(`Approved folders: ${config.approvedFolders.length ? config.approvedFolders.join(", ") : "(none configured)"}`);
 });
+

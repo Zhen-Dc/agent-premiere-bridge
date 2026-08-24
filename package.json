@@ -1,8 +1,8 @@
 {
-  "name": "codex-premiere-bridge",
+  "name": "agent-premiere-bridge",
   "version": "0.1.0",
   "private": true,
-  "description": "Localhost bridge between Codex and Adobe Premiere Pro via CEP and ExtendScript.",
+  "description": "Localhost bridge between AI agents and Adobe Premiere Pro via CEP and ExtendScript.",
   "type": "module",
   "scripts": {
     "start": "node server/src/index.js",
@@ -18,3 +18,4 @@
     "node": ">=20"
   }
 }
+

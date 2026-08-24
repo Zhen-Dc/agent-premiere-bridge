@@ -5,11 +5,11 @@
     "steps": [
       {
         "action": "create_bin",
-        "name": "Codex Rough Cut"
+        "name": "Agent Rough Cut"
       },
       {
         "action": "import_media",
-        "binName": "Codex Rough Cut",
+        "binName": "Agent Rough Cut",
         "files": [
           "D:/Video Projects/sample/interview01.mp4",
           "D:/Video Projects/sample/broll01.mp4"
@@ -17,8 +17,8 @@
       },
       {
         "action": "create_sequence_from_clips",
-        "name": "Codex Rough Cut v1",
-        "binName": "Codex Rough Cut",
+        "name": "Agent Rough Cut v1",
+        "binName": "Agent Rough Cut",
         "clipNames": [
           "interview01.mp4"
         ]
@@ -36,3 +36,4 @@
     ]
   }
 }
+

@@ -71,10 +71,10 @@ Creates a project only when Premiere does not already have one open.
 
 ```json
 {
-  "plan": "Create a bin named Codex Imports.",
+  "plan": "Create a bin named Agent Imports.",
   "command": {
     "action": "create_bin",
-    "name": "Codex Imports"
+    "name": "Agent Imports"
   }
 }
 ```
@@ -85,10 +85,10 @@ Imports approved files into a target bin.
 
 ```json
 {
-  "plan": "Import selected files into Codex Imports.",
+  "plan": "Import selected files into Agent Imports.",
   "command": {
     "action": "import_media",
-    "binName": "Codex Imports",
+    "binName": "Agent Imports",
     "files": ["D:/Video Projects/sample/interview01.mp4"]
   }
 }
@@ -104,7 +104,7 @@ Creates a sequence from existing imported project items. Premiere's scripting su
   "command": {
     "action": "create_sequence_from_clips",
     "name": "Rough Cut v1",
-    "binName": "Codex Imports",
+    "binName": "Agent Imports",
     "clipNames": ["interview01.mp4"]
   }
 }
@@ -140,9 +140,10 @@ Runs multiple steps in order.
   "command": {
     "action": "compound",
     "steps": [
-      { "action": "create_bin", "name": "Codex Rough Cut" },
-      { "action": "import_media", "binName": "Codex Rough Cut", "files": ["D:/Video Projects/sample/interview01.mp4"] },
+      { "action": "create_bin", "name": "Agent Rough Cut" },
+      { "action": "import_media", "binName": "Agent Rough Cut", "files": ["D:/Video Projects/sample/interview01.mp4"] },
       { "action": "add_markers", "markers": [{ "timeSeconds": 0, "name": "Start" }] }
     ]
   }
 }
+

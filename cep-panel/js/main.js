@@ -50,7 +50,7 @@
         setState("Connected");
         var job = body.jobs && body.jobs[0];
         if (!job) {
-          elements.currentJob.textContent = "Waiting for Codex commands.";
+          elements.currentJob.textContent = "Waiting for agent commands.";
           return;
         }
         runJob(job);
@@ -76,9 +76,9 @@
     elements.currentJob.textContent = job.command.action + " (" + job.id + ")";
     log("Running " + job.id + ": " + job.command.action);
 
-    updateStatus(job.id, "running", { message: "Auto-started because the Codex Premiere Bridge panel is open." })
+    updateStatus(job.id, "running", { message: "Auto-started because the Agent Premiere Bridge panel is open." })
       .then(function () {
-        var script = "CodexBridge.runJob(" + JSON.stringify(job.command) + ")";
+        var script = "AgentPremiereBridge.runJob(" + JSON.stringify(job.command) + ")";
         csInterface.evalScript(script, function (rawResult) {
           var result;
           try {
@@ -102,3 +102,4 @@
       });
   }
 })();
+

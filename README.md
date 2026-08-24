@@ -1,6 +1,6 @@
-# Codex Premiere Bridge
+# Agent Premiere Bridge
 
-Localhost bridge between Codex and Adobe Premiere Pro.
+Localhost bridge between AI agents and Adobe Premiere Pro.
 
 The first milestone is intentionally conservative:
 
@@ -18,8 +18,8 @@ The first milestone is intentionally conservative:
 Install Node.js 20 or newer, install Adobe Premiere Pro, then clone the bridge:
 
 ```powershell
-git clone https://github.com/YOUR-USERNAME/codex-premiere-bridge.git
-cd codex-premiere-bridge
+git clone https://github.com/YOUR-USERNAME/agent-premiere-bridge.git
+cd agent-premiere-bridge
 ```
 
 Run setup with the folders that the bridge is allowed to access:
@@ -65,7 +65,7 @@ To open a specific project:
 .\Launch Bridge.bat -ProjectPath "D:\Client Ads\Project\premiere\Project.prproj"
 ```
 
-Adobe does not provide a reliable supported command-line switch for opening a CEP panel inside Premiere. The practical setup is: open `Window > Extensions > Codex Premiere Bridge` once, dock it in the workspace, and save the workspace. After that, launching the project normally should keep the panel available and auto-polling.
+Adobe does not provide a reliable supported command-line switch for opening a CEP panel inside Premiere. The practical setup is: open `Window > Extensions > Agent Premiere Bridge` once, dock it in the workspace, and save the workspace. After that, launching the project normally should keep the panel available and auto-polling.
 
 ## Generic Agent Edit Plans
 
@@ -112,7 +112,7 @@ reg add HKCU\Software\Adobe\CSXS.12 /v PlayerDebugMode /t REG_SZ /d 1 /f
 4. Restart Premiere Pro and open:
 
 ```text
-Window > Extensions > Codex Premiere Bridge
+Window > Extensions > Agent Premiere Bridge
 ```
 
 5. Start the bridge server again.
@@ -149,3 +149,4 @@ docs/         Command protocol notes
 ## Current v1 limits
 
 Premiere's scripting API does not expose every editing feature. This bridge starts with reliable automation around project setup, bins, imports, sequence creation from clips where available, and markers. More advanced editing commands can be added as tested command modules.
+

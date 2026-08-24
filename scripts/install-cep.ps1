@@ -8,7 +8,8 @@ $ErrorActionPreference = "Stop"
 $root = Resolve-Path (Join-Path $PSScriptRoot "..")
 $source = Join-Path $root "cep-panel"
 $extensionsRoot = Join-Path $env:APPDATA "Adobe\CEP\extensions"
-$target = Join-Path $extensionsRoot "com.codex.premiere.bridge"
+$target = Join-Path $extensionsRoot "com.agent.premiere.bridge"
+$legacyTarget = Join-Path $extensionsRoot "com.codex.premiere.bridge"
 
 if (!(Test-Path $source)) {
   throw "CEP panel folder not found: $source"
@@ -17,6 +18,9 @@ if (!(Test-Path $source)) {
 New-Item -ItemType Directory -Force -Path $extensionsRoot | Out-Null
 if (Test-Path $target) {
   Remove-Item -LiteralPath $target -Recurse -Force
+}
+if (Test-Path $legacyTarget) {
+  Remove-Item -LiteralPath $legacyTarget -Recurse -Force
 }
 Copy-Item -LiteralPath $source -Destination $target -Recurse
 
@@ -39,7 +43,8 @@ if (!$SkipDebugRegistry) {
   }
 }
 
-Write-Host "Installed Codex Premiere Bridge panel to:"
+Write-Host "Installed Agent Premiere Bridge panel to:"
 Write-Host $target
 Write-Host ""
-Write-Host "Restart Premiere Pro, then open Window > Extensions > Codex Premiere Bridge once and save that workspace."
+Write-Host "Restart Premiere Pro, then open Window > Extensions > Agent Premiere Bridge once and save that workspace."
+

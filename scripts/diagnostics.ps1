@@ -2,9 +2,10 @@ $ErrorActionPreference = "Continue"
 
 $root = Resolve-Path (Join-Path $PSScriptRoot "..")
 $configPath = Join-Path $root "bridge.config.json"
-$panelPath = Join-Path $env:APPDATA "Adobe\CEP\extensions\com.codex.premiere.bridge"
+$panelPath = Join-Path $env:APPDATA "Adobe\CEP\extensions\com.agent.premiere.bridge"
+$legacyPanelPath = Join-Path $env:APPDATA "Adobe\CEP\extensions\com.codex.premiere.bridge"
 
-Write-Host "Codex Premiere Bridge diagnostics"
+Write-Host "Agent Premiere Bridge diagnostics"
 Write-Host "Root: $root"
 Write-Host ""
 
@@ -42,6 +43,7 @@ if (Test-Path $panelPath) {
 } else {
   Write-Host "Not installed. Run npm run install:cep"
 }
+Write-Host "Legacy Codex panel still installed: $(if (Test-Path $legacyPanelPath) { 'yes' } else { 'no' })"
 
 Write-Host ""
 Write-Host "CEP debug registry:"
@@ -61,3 +63,4 @@ if (Test-Path $configPath) {
     Write-Host "Server is not reachable. Start it with npm start."
   }
 }
+

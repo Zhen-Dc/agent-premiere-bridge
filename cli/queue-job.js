@@ -15,7 +15,7 @@ const response = await fetch(`http://127.0.0.1:${config.port}/api/jobs`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
-    ...(config.requireToken === false ? {} : { "X-Bridge-Token": config.token })
+    ...(config.requireToken === false ? {} : { "X-Agent-Bridge-Token": config.token })
   },
   body: JSON.stringify(job)
 });

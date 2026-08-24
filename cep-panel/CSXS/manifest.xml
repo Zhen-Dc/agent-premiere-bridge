@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ExtensionManifest Version="7.0" ExtensionBundleId="com.codex.premiere.bridge" ExtensionBundleVersion="0.1.0" ExtensionBundleName="Codex Premiere Bridge" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ExtensionManifest Version="7.0" ExtensionBundleId="com.agent.premiere.bridge" ExtensionBundleVersion="0.1.0" ExtensionBundleName="Agent Premiere Bridge" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ExtensionList>
-    <Extension Id="com.codex.premiere.bridge.panel" Version="0.1.0" />
+    <Extension Id="com.agent.premiere.bridge.panel" Version="0.1.0" />
   </ExtensionList>
   <ExecutionEnvironment>
     <HostList>
@@ -15,7 +15,7 @@
     </RequiredRuntimeList>
   </ExecutionEnvironment>
   <DispatchInfoList>
-    <Extension Id="com.codex.premiere.bridge.panel">
+    <Extension Id="com.agent.premiere.bridge.panel">
       <DispatchInfo>
         <Resources>
           <MainPath>./index.html</MainPath>
@@ -30,7 +30,7 @@
         </Lifecycle>
         <UI>
           <Type>Panel</Type>
-          <Menu>Codex Premiere Bridge</Menu>
+          <Menu>Agent Premiere Bridge</Menu>
           <Geometry>
             <Size>
               <Height>720</Height>
@@ -46,3 +46,4 @@
     </Extension>
   </DispatchInfoList>
 </ExtensionManifest>
+

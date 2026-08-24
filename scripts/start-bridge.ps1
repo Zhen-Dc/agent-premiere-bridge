@@ -72,4 +72,5 @@ if (!$NoPremiere -and ($OpenPremiere -or $ProjectPath)) {
   Write-Host "Premiere Pro launch requested."
 }
 
-Write-Host "Ready. The Codex Premiere Bridge panel will run queued jobs when it is open in Premiere."
+Write-Host "Ready. The Agent Premiere Bridge panel will run queued jobs when it is open in Premiere."
+
