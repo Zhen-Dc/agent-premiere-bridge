@@ -11,7 +11,7 @@
     "diagnostics": "powershell -ExecutionPolicy Bypass -File scripts/diagnostics.ps1",
     "detect:premiere": "powershell -ExecutionPolicy Bypass -File scripts/detect-premiere.ps1",
     "install:cep": "powershell -ExecutionPolicy Bypass -File scripts/install-cep.ps1",
-    "setup": "powershell -ExecutionPolicy Bypass -File scripts/setup-bridge.ps1",
+    "setup": "powershell -ExecutionPolicy Bypass -File setup.ps1",
     "launch": "powershell -ExecutionPolicy Bypass -File scripts/start-bridge.ps1"
   },
   "engines": {

@@ -13,29 +13,51 @@ The first milestone is intentionally conservative:
 - ExtendScript executor for Premiere actions
 - Job history and file logs
 
-## Portable Setup On A New PC
+## One-Command Setup On A New PC
 
-Install Node.js 20 or newer, install Adobe Premiere Pro, then clone the bridge:
+Install Adobe Premiere Pro, then clone the bridge:
 
 ```powershell
 git clone https://github.com/YOUR-USERNAME/agent-premiere-bridge.git
 cd agent-premiere-bridge
 ```
 
-Run setup with the folders that the bridge is allowed to access:
+Run one setup command with the folders that the bridge is allowed to access:
 
 ```powershell
-.\Setup Bridge.bat -ApprovedFolder "D:\Client Ads" -ApprovedFolder "D:\SFX"
+.\setup.bat -ApprovedFolder "D:\Client Ads" -ApprovedFolder "D:\SFX"
 ```
 
-The setup script:
+If you do not pass folders, setup will ask for them interactively.
 
-- checks for Node.js 20 or newer
+For optional local transcription support, include:
+
+```powershell
+.\setup.bat -ApprovedFolder "D:\Client Ads" -IncludeTranscription
+```
+
+Inside Codex, you can also use the repo slash command:
+
+```text
+/setup
+```
+
+The setup command:
+
+- installs/checks free dependencies such as Node.js 20+ and Python 3.11+
 - detects the installed Premiere Pro executable and version
 - installs the CEP extension into the current Windows user's Adobe CEP extension folder
 - enables CEP debug mode only for the detected Premiere/CEP generation
 - creates `bridge.config.json` for that machine
 - stores only that PC's approved media/project folders
+
+Manual/premium items are intentionally left to the user: Adobe Premiere Pro licensing/login, paid AI services such as Higgsfield or ElevenLabs, and any paid API keys.
+
+Any AI harness can run the same command. Claude Code, Hermes, Codex, or a custom agent only needs shell access to the repo:
+
+```powershell
+.\setup.bat
+```
 
 Do not copy another machine's `bridge.config.json`. It is intentionally ignored by Git because it contains local paths and machine-specific settings.
 
