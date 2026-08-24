@@ -1,0 +1,10 @@
+{
+  "plan": "Import the approved sample media into a bin named Codex Imports. This job does not place anything on a timeline.",
+  "command": {
+    "action": "import_media",
+    "binName": "Codex Imports",
+    "files": [
+      "D:/Video Projects/sample/interview01.mp4"
+    ]
+  }
+}

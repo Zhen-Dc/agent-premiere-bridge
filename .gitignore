@@ -1,0 +1,32 @@
+# Local machine configuration
+bridge.config.json
+
+# Runtime data
+server/data/
+server/logs/
+*.log
+*.pid
+
+# Project-specific experiments and generated analysis
+work/
+tools/transcribe_back_in_80s.py
+cli/queue-back-in-80s.js
+
+# Node/dependency output
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Adobe/generated files
+*.prproj
+*.pek
+*.cfa
+*.ims
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

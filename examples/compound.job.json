@@ -1,0 +1,38 @@
+{
+  "plan": "Create a bin, import media, create a sequence from the first imported clip if possible, and add timeline markers.",
+  "command": {
+    "action": "compound",
+    "steps": [
+      {
+        "action": "create_bin",
+        "name": "Codex Rough Cut"
+      },
+      {
+        "action": "import_media",
+        "binName": "Codex Rough Cut",
+        "files": [
+          "D:/Video Projects/sample/interview01.mp4",
+          "D:/Video Projects/sample/broll01.mp4"
+        ]
+      },
+      {
+        "action": "create_sequence_from_clips",
+        "name": "Codex Rough Cut v1",
+        "binName": "Codex Rough Cut",
+        "clipNames": [
+          "interview01.mp4"
+        ]
+      },
+      {
+        "action": "add_markers",
+        "markers": [
+          {
+            "timeSeconds": 0,
+            "name": "Start",
+            "comment": "First automated bridge marker."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "projectRoot": "D:/Client Ads/Project Name",
+  "name": "Project Name Ad v1",
+  "sequence": {
+    "name": "Project Name Ad v1 - Editable",
+    "fps": 24,
+    "size": "1080x1920"
+  },
+  "binName": "Edit Assets",
+  "clips": [
+    {
+      "type": "a-roll",
+      "file": "assets/a-roll/clip-01.mp4",
+      "in": 0.5,
+      "out": 4.2,
+      "scale": 100
+    },
+    {
+      "type": "b-roll",
+      "file": "assets/higgsfield/demo-shot.mp4",
+      "start": 1.2,
+      "in": 0,
+      "out": 2.8,
+      "track": "V2",
+      "audio": false,
+      "scale": 100
+    }
+  ],
+  "audio": [
+    {
+      "file": "assets/sfx/pop.mp3",
+      "start": 1.2,
+      "track": 2,
+      "binName": "SFX"
+    }
+  ],
+  "markers": [
+    {
+      "time": 1.2,
+      "name": "B-roll verification",
+      "comment": "Generated asset should show the planned action."
+    }
+  ],
+  "captionsOutputPath": "premiere/captions.srt",
+  "captions": [
+    {
+      "start": 0,
+      "end": 1.5,
+      "text": "Example caption"
+    }
+  ],
+  "saveProject": true
+}

@@ -1,0 +1,11 @@
+{
+  "port": 41326,
+  "token": "replace-with-a-random-shared-secret",
+  "approvedFolders": [
+    "D:/Video Projects"
+  ],
+  "requireApprovalInPanel": false,
+  "requireToken": false,
+  "autoRunOnPanelOpen": true,
+  "localhostOnly": true
+}

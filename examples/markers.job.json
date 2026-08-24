@@ -1,0 +1,23 @@
+{
+  "plan": "Add three review markers to the active Premiere sequence.",
+  "command": {
+    "action": "add_markers",
+    "markers": [
+      {
+        "timeSeconds": 0,
+        "name": "Hook",
+        "comment": "Open with the strongest visual."
+      },
+      {
+        "timeSeconds": 12,
+        "name": "Topic Change",
+        "comment": "Shift into the main explanation."
+      },
+      {
+        "timeSeconds": 45,
+        "name": "CTA",
+        "comment": "Check pacing before export."
+      }
+    ]
+  }
+}

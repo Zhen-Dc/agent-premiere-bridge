@@ -1,0 +1,6 @@
+{
+  "plan": "Run a read-only diagnostic inside Premiere and report the app version, project path, and active sequence.",
+  "command": {
+    "action": "diagnostic"
+  }
+}
